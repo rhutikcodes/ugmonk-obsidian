@@ -36,8 +36,8 @@ Follow these steps to set up a local development environment:
 1. **Fork and clone the repository**
 
    ```bash
-   git clone https://github.com/<your-username>/analog-kanban.git
-   cd analog-kanban
+   git clone https://github.com/rhutikcodes/ugmonk-obsidian.git
+   cd ugmonk-obsidian
    ```
 
 2. **Install dependencies**
@@ -59,7 +59,7 @@ Follow these steps to set up a local development environment:
    Symlink or copy the plugin folder into your test vault's plugin directory:
 
    ```bash
-   ln -s /path/to/analog-kanban /path/to/test-vault/.obsidian/plugins/analog-kanban
+   ln -s /path/to/ugmonk-obsidian /path/to/test-vault/.obsidian/plugins/ugmonk-obsidian
    ```
 
    On Windows, you can use `mklink /D` or simply copy the folder.

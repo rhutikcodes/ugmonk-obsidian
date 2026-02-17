@@ -185,7 +185,7 @@ Available commands:
 1. Download the latest release files: `main.js`, `manifest.json`, and `styles.css`.
 2. In your Obsidian vault, create the plugin folder:
    ```
-   <your-vault>/.obsidian/plugins/analog-kanban/
+   <your-vault>/.obsidian/plugins/ugmonk-obsidian/
    ```
 3. Copy the three downloaded files into that folder.
 4. Open Obsidian and navigate to **Settings > Community Plugins**.
@@ -328,7 +328,7 @@ Access plugin settings via **Settings > Community Plugins > Analog**.
 ## Project Structure
 
 ```
-analog-kanban/
+ugmonk-obsidian/
   manifest.json            Plugin metadata (name, version, description)
   package.json             Dependencies and build scripts
   tsconfig.json            TypeScript compiler configuration
@@ -365,8 +365,8 @@ analog-kanban/
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/analog-kanban.git
-cd analog-kanban
+git clone https://github.com/rhutikcodes/ugmonk-obsidian.git
+cd ugmonk-obsidian
 
 # Install dependencies
 npm install
@@ -383,7 +383,7 @@ npm run dev
 After building, copy (or symlink) the following files into your vault's plugin directory:
 
 ```bash
-cp main.js manifest.json styles.css <your-vault>/.obsidian/plugins/analog-kanban/
+cp main.js manifest.json styles.css <your-vault>/.obsidian/plugins/ugmonk-obsidian/
 ```
 
 Then enable the plugin in Obsidian's settings.
@@ -391,7 +391,7 @@ Then enable the plugin in Obsidian's settings.
 For active development, you can symlink the entire project directory:
 
 ```bash
-ln -s /path/to/analog-kanban <your-vault>/.obsidian/plugins/analog-kanban
+ln -s /path/to/ugmonk-obsidian <your-vault>/.obsidian/plugins/ugmonk-obsidian
 ```
 
 ---
