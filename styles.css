@@ -1,0 +1,847 @@
+/* ===== Analog Kanban - Ugmonk-inspired styling ===== */
+
+/* Ensure the view blends with Obsidian's theme */
+.workspace-leaf-content[data-type="analog-kanban-view"] {
+	background: var(--background-primary);
+}
+
+.workspace-leaf-content[data-type="analog-kanban-view"] .view-content {
+	background: var(--background-primary);
+	padding: 0;
+}
+
+.analog-board-container {
+	height: 100%;
+	overflow: auto;
+	padding: 16px;
+	background: var(--background-primary);
+}
+
+.analog-board {
+	display: flex;
+	gap: 16px;
+	height: 100%;
+	min-height: 400px;
+}
+
+/* ===== Columns ===== */
+
+.analog-column {
+	flex: 1;
+	min-width: 220px;
+	display: flex;
+	flex-direction: column;
+	border-radius: 8px;
+	padding: 16px;
+	background: var(--background-secondary);
+	border: 1px solid var(--background-modifier-border);
+}
+
+.analog-column-today {
+	background: var(--background-primary);
+	border-color: var(--interactive-accent);
+	border-width: 2px;
+}
+
+.analog-column-next {
+	background: color-mix(in srgb, var(--background-secondary) 90%, var(--text-accent) 10%);
+}
+
+.analog-column-someday {
+	background: var(--background-secondary);
+}
+
+.analog-column-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 12px;
+	padding-bottom: 8px;
+	border-bottom: 2px solid var(--background-modifier-border);
+}
+
+.analog-column-header h3 {
+	margin: 0;
+	font-size: 14px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	color: var(--text-normal);
+}
+
+.analog-task-count {
+	font-size: 11px;
+	font-weight: 600;
+	color: var(--text-muted);
+	background: var(--background-modifier-border);
+	padding: 2px 8px;
+	border-radius: 10px;
+}
+
+/* ===== Task List ===== */
+
+.analog-task-list {
+	flex: 1;
+	overflow-y: auto;
+	min-height: 60px;
+	padding: 4px 0;
+}
+
+.analog-task-list.analog-drop-active {
+	background: color-mix(in srgb, var(--interactive-accent) 8%, transparent);
+	border-radius: 6px;
+}
+
+.analog-drop-indicator {
+	height: 2px;
+	background: var(--interactive-accent);
+	border-radius: 1px;
+	margin: 2px 0;
+}
+
+/* ===== Task Card ===== */
+
+.analog-task {
+	display: flex;
+	align-items: flex-start;
+	gap: 8px;
+	padding: 10px 12px;
+	margin-bottom: 6px;
+	border-radius: 6px;
+	background: var(--background-primary);
+	border: 1px solid var(--background-modifier-border);
+	cursor: grab;
+	transition: box-shadow 0.15s ease, transform 0.15s ease, opacity 0.15s ease;
+}
+
+.analog-task:hover {
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+	transform: translateY(-1px);
+}
+
+.analog-task:active {
+	cursor: grabbing;
+}
+
+.analog-task.analog-dragging {
+	opacity: 0.4;
+	transform: scale(0.98);
+}
+
+.analog-task-completed {
+	opacity: 0.55;
+}
+
+.analog-task-completed .analog-task-text {
+	text-decoration: line-through;
+	color: var(--text-muted);
+}
+
+/* ===== Priority Left Border ===== */
+
+.analog-priority-0 {
+	border-left: 3px solid #e53935;
+}
+
+.analog-priority-1 {
+	border-left: 3px solid #fb8c00;
+}
+
+.analog-priority-2 {
+	border-left: 3px solid #1e88e5;
+}
+
+.analog-priority-3 {
+	border-left: 3px solid #9e9e9e;
+}
+
+/* ===== Status Circle ===== */
+
+.analog-status-btn {
+	flex-shrink: 0;
+	width: 24px;
+	height: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	border-radius: 50%;
+	color: var(--text-muted);
+	transition: color 0.15s ease, background 0.15s ease;
+}
+
+.analog-status-btn:hover {
+	color: var(--interactive-accent);
+	background: color-mix(in srgb, var(--interactive-accent) 12%, transparent);
+}
+
+.analog-task-in_progress .analog-status-btn {
+	color: var(--text-accent);
+}
+
+.analog-task-completed .analog-status-btn {
+	color: var(--text-muted);
+}
+
+.analog-task-delegated .analog-status-btn {
+	color: var(--text-accent);
+}
+
+/* ===== Task Content ===== */
+
+.analog-task-content {
+	flex: 1;
+	min-width: 0;
+}
+
+.analog-task-top-row {
+	display: flex;
+	align-items: flex-start;
+	gap: 6px;
+}
+
+.analog-task-text {
+	flex: 1;
+	font-size: 13px;
+	line-height: 1.5;
+	color: var(--text-normal);
+	word-break: break-word;
+}
+
+/* ===== Priority Badge ===== */
+
+.analog-priority-badge {
+	flex-shrink: 0;
+	font-size: 10px;
+	font-weight: 700;
+	padding: 1px 5px;
+	border-radius: 3px;
+	line-height: 1.4;
+	letter-spacing: 0.3px;
+}
+
+.analog-priority-badge-0 {
+	color: #fff;
+	background: #e53935;
+}
+
+.analog-priority-badge-1 {
+	color: #fff;
+	background: #fb8c00;
+}
+
+.analog-priority-badge-2 {
+	color: #fff;
+	background: #1e88e5;
+}
+
+.analog-priority-badge-3 {
+	color: var(--text-muted);
+	background: var(--background-modifier-border);
+}
+
+/* ===== Task Description ===== */
+
+.analog-task-description {
+	font-size: 12px;
+	line-height: 1.4;
+	color: var(--text-muted);
+	margin-top: 4px;
+	padding: 4px 0;
+	cursor: pointer;
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.analog-task-description:hover {
+	color: var(--text-normal);
+}
+
+.analog-desc-edit-section {
+	margin-top: 4px;
+}
+
+.analog-desc-textarea {
+	width: 100%;
+	font-size: 12px;
+	line-height: 1.4;
+	color: var(--text-normal);
+	background: var(--background-secondary);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 4px;
+	padding: 6px 8px;
+	resize: vertical;
+	font-family: var(--font-text);
+}
+
+.analog-desc-textarea:focus {
+	border-color: var(--interactive-accent);
+	outline: none;
+}
+
+/* ===== Due Date Badge ===== */
+
+.analog-task-meta {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	margin-top: 4px;
+	flex-wrap: wrap;
+}
+
+.analog-due-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 3px;
+	font-size: 11px;
+	color: var(--text-muted);
+	padding: 1px 6px;
+	border-radius: 8px;
+	background: var(--background-modifier-border);
+}
+
+.analog-due-icon {
+	display: inline-flex;
+	align-items: center;
+}
+
+.analog-due-icon svg {
+	width: 12px;
+	height: 12px;
+}
+
+.analog-due-today {
+	color: var(--text-accent);
+	background: color-mix(in srgb, var(--text-accent) 15%, transparent);
+	font-weight: 600;
+}
+
+.analog-due-overdue {
+	color: #e53935;
+	background: color-mix(in srgb, #e53935 12%, transparent);
+	font-weight: 600;
+}
+
+.analog-date-picker-row {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	margin-top: 6px;
+	padding: 4px 0;
+}
+
+.analog-date-input {
+	font-size: 12px;
+	padding: 3px 6px;
+	border: 1px solid var(--interactive-accent);
+	border-radius: 4px;
+	background: var(--background-primary);
+	color: var(--text-normal);
+	font-family: var(--font-text);
+}
+
+.analog-date-clear-btn {
+	font-size: 11px;
+	padding: 2px 8px;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 4px;
+	background: var(--background-primary);
+	color: var(--text-muted);
+	cursor: pointer;
+}
+
+.analog-date-clear-btn:hover {
+	color: #e53935;
+	border-color: #e53935;
+}
+
+/* ===== Effort Badge ===== */
+
+.analog-effort-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 3px;
+	font-size: 11px;
+	color: var(--text-muted);
+	padding: 1px 6px;
+	border-radius: 8px;
+	background: color-mix(in srgb, var(--interactive-accent) 10%, var(--background-modifier-border));
+}
+
+.analog-effort-icon {
+	display: inline-flex;
+	align-items: center;
+}
+
+.analog-effort-icon svg {
+	width: 12px;
+	height: 12px;
+}
+
+.analog-effort-input-row {
+	margin-top: 6px;
+	padding: 4px 0;
+}
+
+.analog-effort-input {
+	width: 100%;
+	font-size: 12px;
+	padding: 4px 8px;
+	border: 1px solid var(--interactive-accent);
+	border-radius: 4px;
+	background: var(--background-primary);
+	color: var(--text-normal);
+	font-family: var(--font-text);
+	outline: none;
+}
+
+/* ===== Tags ===== */
+
+.analog-task-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+	margin-top: 4px;
+}
+
+.analog-tag-chip {
+	display: inline-block;
+	font-size: 10px;
+	font-weight: 600;
+	padding: 1px 6px;
+	border-radius: 8px;
+	cursor: pointer;
+	color: var(--tag-color, var(--text-accent));
+	background: color-mix(in srgb, var(--tag-color, var(--text-accent)) 12%, transparent);
+	transition: opacity 0.15s ease;
+}
+
+.analog-tag-chip:hover {
+	opacity: 0.7;
+	text-decoration: line-through;
+}
+
+.analog-new-tag-row {
+	margin-top: 6px;
+	padding: 4px 0;
+}
+
+.analog-new-tag-input {
+	width: 100%;
+	font-size: 12px;
+	padding: 4px 8px;
+	border: 1px solid var(--interactive-accent);
+	border-radius: 4px;
+	background: var(--background-primary);
+	color: var(--text-normal);
+	font-family: var(--font-text);
+	outline: none;
+}
+
+/* Settings: Tags list */
+
+.analog-tags-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	padding: 8px 0;
+}
+
+.analog-tag-row {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	padding: 3px 8px;
+	border-radius: 12px;
+	background: var(--background-modifier-border);
+	font-size: 12px;
+}
+
+.analog-tag-label {
+	color: var(--text-normal);
+}
+
+.analog-tag-remove {
+	background: none;
+	border: none;
+	color: var(--text-muted);
+	cursor: pointer;
+	font-size: 14px;
+	line-height: 1;
+	padding: 0 2px;
+}
+
+.analog-tag-remove:hover {
+	color: #e53935;
+}
+
+/* ===== Subtasks ===== */
+
+.analog-subtasks {
+	margin-top: 6px;
+	padding-top: 6px;
+	border-top: 1px dashed var(--background-modifier-border);
+}
+
+.analog-subtasks-summary {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	margin-bottom: 4px;
+}
+
+.analog-subtasks-count {
+	font-size: 10px;
+	font-weight: 600;
+	color: var(--text-muted);
+	min-width: 24px;
+}
+
+.analog-subtasks-bar {
+	flex: 1;
+	height: 3px;
+	background: var(--background-modifier-border);
+	border-radius: 2px;
+	overflow: hidden;
+}
+
+.analog-subtasks-bar-fill {
+	height: 100%;
+	background: var(--interactive-accent);
+	border-radius: 2px;
+	transition: width 0.2s ease;
+}
+
+.analog-subtask {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	padding: 2px 0;
+	font-size: 12px;
+}
+
+.analog-subtask-status {
+	flex-shrink: 0;
+	width: 18px;
+	height: 18px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	border-radius: 50%;
+	color: var(--text-muted);
+	transition: color 0.15s ease, background 0.15s ease;
+}
+
+.analog-subtask-status:hover {
+	color: var(--interactive-accent);
+	background: color-mix(in srgb, var(--interactive-accent) 12%, transparent);
+}
+
+.analog-subtask-in_progress .analog-subtask-status {
+	color: var(--text-accent);
+}
+
+.analog-subtask-completed .analog-subtask-status {
+	color: var(--text-muted);
+}
+
+.analog-subtask-text {
+	flex: 1;
+	color: var(--text-normal);
+	min-width: 0;
+	word-break: break-word;
+	cursor: default;
+}
+
+.analog-subtask-completed .analog-subtask-text {
+	text-decoration: line-through;
+	color: var(--text-muted);
+}
+
+.analog-subtask-badges {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	flex-shrink: 0;
+}
+
+.analog-subtask-badges .analog-priority-badge {
+	font-size: 9px;
+	padding: 0px 4px;
+}
+
+.analog-subtask-effort {
+	font-size: 10px;
+	color: var(--text-muted);
+	padding: 0px 4px;
+	border-radius: 6px;
+	background: color-mix(in srgb, var(--interactive-accent) 10%, var(--background-modifier-border));
+	white-space: nowrap;
+}
+
+.analog-subtask-delegate {
+	font-size: 10px;
+	color: var(--text-accent);
+	background: color-mix(in srgb, var(--text-accent) 10%, transparent);
+	padding: 0px 4px;
+	border-radius: 6px;
+	white-space: nowrap;
+}
+
+.analog-subtask-delete {
+	flex-shrink: 0;
+	font-size: 14px;
+	color: var(--text-faint);
+	cursor: pointer;
+	line-height: 1;
+	opacity: 0;
+	transition: opacity 0.15s ease;
+}
+
+.analog-subtask:hover .analog-subtask-delete {
+	opacity: 1;
+}
+
+.analog-subtask-delete:hover {
+	color: #e53935;
+}
+
+.analog-subtask-edit {
+	width: 100%;
+	font-size: 12px;
+	padding: 1px 4px;
+	background: var(--background-primary);
+	border: 1px solid var(--interactive-accent);
+	border-radius: 3px;
+	color: var(--text-normal);
+	font-family: var(--font-text);
+	outline: none;
+}
+
+.analog-subtask-add-row {
+	margin-top: 2px;
+}
+
+.analog-subtask-add-input {
+	width: 100%;
+	font-size: 11px;
+	padding: 3px 6px;
+	background: transparent;
+	border: none;
+	border-bottom: 1px dashed var(--background-modifier-border);
+	color: var(--text-normal);
+	font-family: var(--font-text);
+	outline: none;
+}
+
+.analog-subtask-add-input::placeholder {
+	color: var(--text-faint);
+	font-style: italic;
+}
+
+.analog-subtask-add-input:focus {
+	border-bottom-color: var(--interactive-accent);
+}
+
+/* ===== Delegation Badge ===== */
+
+.analog-delegated-badge {
+	display: inline-block;
+	font-size: 11px;
+	color: var(--text-accent);
+	background: color-mix(in srgb, var(--text-accent) 12%, transparent);
+	padding: 1px 6px;
+	border-radius: 8px;
+}
+
+/* ===== Progress Bar ===== */
+
+.analog-progress-container {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	margin-top: 6px;
+}
+
+.analog-progress-bar {
+	flex: 1;
+	height: 4px;
+	background: var(--background-modifier-border);
+	border-radius: 2px;
+	cursor: pointer;
+	overflow: hidden;
+	transition: height 0.15s ease;
+}
+
+.analog-progress-bar:hover {
+	height: 6px;
+}
+
+.analog-progress-fill {
+	height: 100%;
+	background: var(--interactive-accent);
+	border-radius: 2px;
+	transition: width 0.2s ease;
+}
+
+.analog-progress-label {
+	font-size: 10px;
+	color: var(--text-muted);
+	min-width: 28px;
+	text-align: right;
+}
+
+/* ===== Notes ===== */
+
+.analog-notes-toggle {
+	display: inline-flex;
+	align-items: center;
+	margin-top: 4px;
+	cursor: pointer;
+	color: var(--text-faint);
+	transition: color 0.15s ease;
+}
+
+.analog-notes-toggle:hover {
+	color: var(--text-accent);
+}
+
+.analog-notes-toggle svg {
+	width: 14px;
+	height: 14px;
+}
+
+.analog-notes-section {
+	margin-top: 8px;
+	padding-top: 8px;
+	border-top: 1px solid var(--background-modifier-border);
+}
+
+.analog-notes-textarea {
+	width: 100%;
+	font-size: 12px;
+	line-height: 1.4;
+	color: var(--text-normal);
+	background: var(--background-secondary);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 4px;
+	padding: 6px 8px;
+	resize: vertical;
+	font-family: var(--font-text);
+}
+
+.analog-notes-textarea:focus {
+	border-color: var(--interactive-accent);
+	outline: none;
+}
+
+/* ===== Add Task Input ===== */
+
+.analog-add-row {
+	display: flex;
+	gap: 6px;
+	margin-top: 8px;
+	padding-top: 8px;
+}
+
+.analog-add-input {
+	flex: 1;
+	font-size: 12px;
+	padding: 6px 10px;
+	background: var(--background-primary);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 6px;
+	color: var(--text-normal);
+	font-family: var(--font-text);
+}
+
+.analog-add-input:focus {
+	border-color: var(--interactive-accent);
+	outline: none;
+}
+
+.analog-add-input::placeholder {
+	color: var(--text-faint);
+}
+
+.analog-add-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 30px;
+	height: 30px;
+	border-radius: 6px;
+	cursor: pointer;
+	color: var(--text-muted);
+	background: var(--background-primary);
+	border: 1px solid var(--background-modifier-border);
+	transition: all 0.15s ease;
+}
+
+.analog-add-btn:hover {
+	color: var(--interactive-accent);
+	border-color: var(--interactive-accent);
+}
+
+.analog-add-btn svg {
+	width: 16px;
+	height: 16px;
+}
+
+/* ===== Inline Edit ===== */
+
+.analog-inline-edit {
+	width: 100%;
+	font-size: 13px;
+	padding: 2px 4px;
+	background: var(--background-primary);
+	border: 1px solid var(--interactive-accent);
+	border-radius: 3px;
+	color: var(--text-normal);
+	font-family: var(--font-text);
+	outline: none;
+}
+
+.analog-delegate-input {
+	width: 100%;
+	font-size: 12px;
+	padding: 4px 8px;
+	margin-top: 6px;
+	background: var(--background-primary);
+	border: 1px solid var(--interactive-accent);
+	border-radius: 4px;
+	color: var(--text-normal);
+	font-family: var(--font-text);
+	outline: none;
+}
+
+/* ===== Dark Mode Overrides ===== */
+
+.theme-dark .analog-column-today {
+	background: color-mix(in srgb, var(--background-primary) 95%, var(--interactive-accent) 5%);
+}
+
+.theme-dark .analog-column-next {
+	background: color-mix(in srgb, var(--background-secondary) 95%, var(--text-accent) 5%);
+}
+
+.theme-dark .analog-task {
+	border-color: var(--background-modifier-border);
+}
+
+.theme-dark .analog-task:hover {
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 600px) {
+	.analog-board {
+		flex-direction: column;
+	}
+
+	.analog-column {
+		min-width: unset;
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"id": "analog-kanban",
+	"name": "Analog",
+	"version": "1.0.0",
+	"minAppVersion": "1.0.0",
+	"description": "A three-column Kanban board inspired by the Ugmonk Analog productivity system. Track tasks across Today, Next, and Someday columns with visual status indicators.",
+	"author": "Rhutik",
+	"isDesktopOnly": false
+}
