@@ -6,8 +6,8 @@ Bring the clarity of physical index cards into your Obsidian vault. Analog Kanba
 
 No frameworks. No external dependencies. Just your notes, rendered as a board.
 
-![Analog Kanban Screenshot](https://via.placeholder.com/960x540?text=Analog+Kanban+Screenshot)
-<!-- Replace with an actual screenshot of the plugin in action -->
+<img width="1439" height="808" alt="image" src="https://github.com/user-attachments/assets/ce01ccc2-d065-456f-9697-289515642976" />
+
 
 ---
 
